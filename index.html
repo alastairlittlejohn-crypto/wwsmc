@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wagga Wagga Specialist Medical Centre — Suite Directory</title>
+<meta name="description" content="Find a specialist consulting at the Wagga Wagga Specialist Medical Centre, 325-327 Edward Street. Suite-by-suite directory, contact details and building information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16302D;
+    --ink-soft:#1F3E3A;
+    --paper:#F0EEE3;
+    --paper-dim:#E6E3D5;
+    --white:#FFFFFF;
+    --brass:#AD8A54;
+    --brass-light:#D9BD8C;
+    --slate:#46605C;
+    --brick:#8B4A3B;
+    --line: rgba(22,48,45,0.14);
+    --line-light: rgba(240,238,227,0.18);
+    --radius: 3px;
+    --maxw: 1180px;
+    --shadow: 0 12px 30px rgba(22,48,45,0.10);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  img{max-width:100%; display:block;}
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+  a:focus-visible, button:focus-visible, .chip:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(240,238,227,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .brand{
+    display:flex; flex-direction:column; gap:2px;
+    text-decoration:none;
+  }
+  .brand .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+  }
+  .brand .name{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  nav.main-nav{display:flex; gap:32px;}
+  nav.main-nav a{
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    color:var(--ink);
+    position:relative;
+    padding:4px 0;
+  }
+  nav.main-nav a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-2px;
+    height:1px; background:var(--brass);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.main-nav a:hover::after{transform:scaleX(1);}
+  .nav-toggle{
+    display:none;
+    background:none; border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px 10px; font-family:inherit; font-size:14px; cursor:pointer;
+  }
+
+  @media (max-width:760px){
+    nav.main-nav{
+      display:none;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--paper);
+      flex-direction:column; gap:0;
+      border-bottom:1px solid var(--line);
+    }
+    nav.main-nav.open{display:flex;}
+    nav.main-nav a{padding:14px 28px; border-top:1px solid var(--line);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:64px 0 48px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:56px;
+    align-items:end;
+  }
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brick);
+    margin-bottom:18px;
+    display:block;
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--brass);
+  }
+  .hero p.lede{
+    margin-top:22px;
+    max-width:46ch;
+    font-size:17px;
+    color:var(--slate);
+  }
+  .hero-cta{
+    margin-top:28px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px;
+    border-radius:var(--radius);
+    font-size:14px; font-weight:600;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    font-family:'Work Sans', sans-serif;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--ink-soft);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  .hero-fact{
+    border-left:1px solid var(--line);
+    padding-left:28px;
+  }
+  .hero-fact .stat{
+    font-family:'Fraunces', serif;
+    font-size:52px;
+    color:var(--ink);
+    line-height:1;
+  }
+  .hero-fact .stat-label{
+    margin-top:10px;
+    font-size:13px;
+    color:var(--slate);
+    max-width:26ch;
+  }
+  .hero-fact-list{
+    margin-top:26px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .hero-fact-list .item{
+    display:flex; justify-content:space-between;
+    font-size:13px;
+    border-top:1px solid var(--line);
+    padding-top:12px;
+  }
+  .hero-fact-list .item span:first-child{color:var(--slate);}
+  .hero-fact-list .item span:last-child{font-family:'IBM Plex Mono', monospace; font-weight:500;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .hero-fact{border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:24px;}
+  }
+
+  /* ---------- Directory board (signature element) ---------- */
+  .board-section{padding:64px 0 40px;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:28px; flex-wrap:wrap;
+  }
+  .section-head .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--brass);
+    display:block; margin-bottom:10px;
+  }
+  .section-head h2{font-size:clamp(26px,3vw,34px);}
+  .section-head p{color:var(--slate); font-size:14px; max-width:42ch; margin-top:8px;}
+
+  .chips{
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    padding:8px 14px;
+    border:1px solid var(--line);
+    border-radius:99px;
+    background:transparent;
+    color:var(--ink);
+    cursor:pointer;
+    transition: background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .chip:hover{border-color:var(--brass);}
+  .chip.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+
+  .board{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:6px;
+    padding:8px 0;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .floor-group{
+    border-top:1px solid var(--line-light);
+  }
+  .floor-group:first-child{border-top:none;}
+  .floor-label{
+    display:flex; align-items:baseline; gap:14px;
+    padding:22px 32px 6px;
+  }
+  .floor-label .fnum{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--brass-light);
+    letter-spacing:0.08em;
+  }
+  .floor-label h3{
+    font-size:15px;
+    font-weight:500;
+    color:var(--paper);
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    font-family:'Work Sans', sans-serif;
+  }
+  .row{
+    display:grid;
+    grid-template-columns: 80px 1.3fr 1fr 150px;
+    gap:18px;
+    align-items:center;
+    padding:16px 32px;
+    border-top:1px solid var(--line-light);
+    text-decoration:none;
+    transition: background .18s ease;
+  }
+  .row:hover{background:rgba(217,189,140,0.08);}
+  .row .suite{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--brass-light);
+    font-size:14px;
+  }
+  .row .practice{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:16.5px;
+    line-height:1.3;
+    color:var(--paper);
+  }
+  .row .specialty-col{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+  }
+  .row .specialty-col .specialty{
+    font-family:'Work Sans', sans-serif;
+    font-weight:500;
+    font-size:13px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+  }
+  .row .specialty-col .note{
+    font-size:12.5px;
+    color:rgba(240,238,227,0.55);
+  }
+  .row .phone{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-align:right;
+    color:var(--paper);
+  }
+  .row.hidden{display:none;}
+
+  @media (max-width:700px){
+    .row{grid-template-columns: 1fr; gap:6px; padding:16px 20px;}
+    .row .suite{order:-1; font-size:12px; color:var(--brass-light);}
+    .row .practice{margin-top:2px;}
+    .row .specialty-col{margin-top:2px;}
+    .row .phone{text-align:left; margin-top:6px;}
+    .floor-label{padding:20px 20px 4px;}
+  }
+
+  .board-footnote{
+    margin-top:16px;
+    font-size:12.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- Info strip ---------- */
+  .info-strip{
+    padding:64px 0;
+    border-top:1px solid var(--line);
+  }
+  .info-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .info-card{
+    background:var(--paper);
+    padding:28px 26px;
+  }
+  .info-card .icon{
+    width:30px; height:30px;
+    margin-bottom:18px;
+    color:var(--brick);
+  }
+  .info-card h3{
+    font-size:15px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .info-card p{
+    font-size:13.5px;
+    color:var(--slate);
+    margin:0;
+  }
+  @media (max-width:760px){
+    .info-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Map / find us ---------- */
+  .find-us{
+    padding:0 0 64px;
+  }
+  .find-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .find-details{
+    background:var(--white);
+    padding:40px 40px;
+  }
+  .find-details .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--brass);
+    display:block; margin-bottom:14px;
+  }
+  .find-details h2{font-size:26px; margin-bottom:18px;}
+  .find-details address{
+    font-style:normal;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:24px;
+  }
+  .find-details .meta-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;}
+  .find-details .meta-list li{
+    font-size:14px; color:var(--slate);
+    display:flex; gap:10px;
+  }
+  .find-details .meta-list strong{color:var(--ink); font-weight:600; min-width:96px; display:inline-block;}
+  .map-embed iframe{
+    width:100%; height:100%; min-height:340px; border:0; filter:grayscale(0.15) contrast(1.02);
+  }
+  @media (max-width:800px){
+    .find-grid{grid-template-columns:1fr;}
+    .map-embed iframe{min-height:260px;}
+    .find-details{padding:32px 24px;}
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{
+    padding:64px 0;
+    border-top:1px solid var(--line);
+  }
+  .faq-grid{
+    display:grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap:48px;
+  }
+  .faq-list{display:flex; flex-direction:column;}
+  .faq-item{
+    border-top:1px solid var(--line);
+    padding:22px 0;
+  }
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item h3{
+    font-size:16px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .faq-item p{font-size:14px; color:var(--slate); margin:0; max-width:60ch;}
+  @media (max-width:800px){
+    .faq-grid{grid-template-columns:1fr; gap:8px;}
+  }
+
+  /* ---------- CTA / contact ---------- */
+  .cta-band{
+    background:var(--ink);
+    color:var(--paper);
+    padding:56px 0;
+  }
+  .cta-inner{
+    display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;
+  }
+  .cta-inner h2{color:var(--paper); font-size:clamp(22px,3vw,30px); max-width:20ch;}
+  .cta-inner .btn-primary{background:var(--brass); color:var(--ink);}
+  .cta-inner .btn-primary:hover{background:var(--brass-light);}
+  .cta-inner .btn-ghost{border-color:rgba(240,238,227,0.4); color:var(--paper);}
+  .cta-inner .btn-ghost:hover{background:var(--paper); color:var(--ink);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:36px 0;
+    font-size:12.5px;
+    color:var(--slate);
+  }
+  .footer-row{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(10px);
+    animation: rise .5s ease forwards;
+  }
+  @keyframes rise{ to{opacity:1; transform:translateY(0);} }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="#top" class="brand">
+      <span class="eyebrow">325–327 Edward Street · Wagga Wagga</span>
+      <span class="name">Wagga Wagga Specialist Medical Centre</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#directory">Suite directory</a>
+      <a href="#find-us">Find us</a>
+      <a href="#faq">Referrals &amp; FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Specialist consulting rooms · Riverina region</span>
+        <h1>One building.<br><em>Every</em> specialist you were referred to.</h1>
+        <p class="lede">Wagga Wagga Specialist Medical Centre houses independent specialist surgeons, physicians and allied health practices — from breast &amp; endocrine surgery to radiology and paediatric sleep medicine. Search the directory below to find the right suite before your appointment.</p>
+        <div class="hero-cta">
+          <a href="#directory" class="btn btn-primary">Find a specialist</a>
+          <a href="#find-us" class="btn btn-ghost">Parking &amp; directions</a>
+        </div>
+      </div>
+      <div class="hero-fact">
+        <div class="stat mono">11+</div>
+        <p class="stat-label">independent specialist &amp; allied health practices consulting on-site.</p>
+        <div class="hero-fact-list">
+          <div class="item"><span>Building hours</span><span>Mon–Fri, 7:00–18:00</span></div>
+          <div class="item"><span>Referral required</span><span>Yes — from your GP</span></div>
+          <div class="item"><span>On-site parking</span><span>Yes, off Edward St</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTORY BOARD -->
+  <section class="board-section" id="directory">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Suite directory</span>
+          <h2>Who consults in this building</h2>
+          <p>Filter by specialty, or scroll floor by floor — the same order you'll see on the lobby directory board.</p>
+        </div>
+        <div class="chips" id="chipRow" role="group" aria-label="Filter by specialty">
+          <button class="chip active" data-filter="all">All specialties</button>
+        </div>
+      </div>
+
+      <div class="board" id="board">
+        <div class="floor-group" data-floor="Suites">
+          <div class="floor-label"><span class="fnum mono">325–327</span><h3>Edward Street — All Suites</h3></div>
+
+          <a class="row" href="tel:0269250305" data-specialty="Paediatric Sleep Medicine">
+            <span class="suite mono">Suite 1</span>
+            <span class="practice">Sydney Sleep Services — Dr Ganesh Thambipillay</span>
+            <span class="specialty-col">
+              <span class="specialty">Paediatric Sleep Medicine</span>
+              <span class="note">Consultant paediatrician, sleep disorders in children</span>
+            </span>
+            <span class="phone mono">(02) 6925 0305</span>
+          </a>
+          <a class="row" href="tel:0269321700" data-specialty="Respiratory & Sleep Medicine">
+            <span class="suite mono">Suite 3</span>
+            <span class="practice">Riverina Respiratory &amp; Sleep Centre</span>
+            <span class="specialty-col">
+              <span class="specialty">Respiratory &amp; Sleep Medicine</span>
+              <span class="note">A/Prof T. Mackenzie, Drs Stone, Boland, Goh, Byrne &amp; Chang</span>
+            </span>
+            <span class="phone mono">(02) 6932 1700</span>
+          </a>
+          <a class="row" href="tel:0269257451" data-specialty="General Practice">
+            <span class="suite mono">Suite 4</span>
+            <span class="practice">Dr Geraldine Duncan's Rooms</span>
+            <span class="specialty-col">
+              <span class="specialty">General Practice</span>
+              <span class="note">Bulk billing available</span>
+            </span>
+            <span class="phone mono">(02) 6925 7451</span>
+          </a>
+          <a class="row" href="#" data-specialty="Breast & Endocrine Surgery">
+            <span class="suite mono">Suite 5</span>
+            <span class="practice">South West Breast &amp; Endocrine Surgeons</span>
+            <span class="specialty-col">
+              <span class="specialty">Breast &amp; Endocrine Surgery</span>
+              <span class="note">Drs David Littlejohn &amp; Andrew M. Thompson FRACS</span>
+            </span>
+            <span class="phone mono">See website</span>
+          </a>
+          <a class="row" href="tel:0269254466" data-specialty="Orthodontics & Oral Surgery">
+            <span class="suite mono">Suite 6</span>
+            <span class="practice">OSO Centre</span>
+            <span class="specialty-col">
+              <span class="specialty">Orthodontics &amp; Oral Surgery</span>
+              <span class="note">Oral surgery &amp; orthodontic treatment</span>
+            </span>
+            <span class="phone mono">(02) 6925 4466</span>
+          </a>
+          <a class="row" href="#" data-specialty="Pathology">
+            <span class="suite mono">Suite 6a</span>
+            <span class="practice">Laverty Pathology</span>
+            <span class="specialty-col">
+              <span class="specialty">Pathology</span>
+              <span class="note">Blood collection centre, no appointment needed</span>
+            </span>
+            <span class="phone mono">See website</span>
+          </a>
+          <a class="row" href="tel:0269252639" data-specialty="Endocrinology">
+            <span class="suite mono">Suite 7</span>
+            <span class="practice">Dr Mary Freeman</span>
+            <span class="specialty-col">
+              <span class="specialty">Endocrinology</span>
+              <span class="note">Diabetes, thyroid, adrenal &amp; pituitary disorders</span>
+            </span>
+            <span class="phone mono">(02) 6925 2639</span>
+          </a>
+          <a class="row" href="tel:0269256407" data-specialty="Fertility Medicine">
+            <span class="suite mono">Suite 11</span>
+            <span class="practice">Reproductive Medicine Wagga</span>
+            <span class="specialty-col">
+              <span class="specialty">Fertility Medicine</span>
+              <span class="note">IVF &amp; assisted reproductive technology</span>
+            </span>
+            <span class="phone mono">(02) 6925 6407</span>
+          </a>
+          <a class="row" href="tel:0269256122" data-specialty="Respiratory Medicine">
+            <span class="suite mono">Suite 12</span>
+            <span class="practice">The Rural Lung Unit</span>
+            <span class="specialty-col">
+              <span class="specialty">Respiratory Medicine</span>
+              <span class="note">Complex respiratory illness management</span>
+            </span>
+            <span class="phone mono">(02) 6925 6122</span>
+          </a>
+          <a class="row" href="tel:0269716100" data-specialty="Radiology">
+            <span class="suite mono">L1, Suite 15</span>
+            <span class="practice">Imaging Associates</span>
+            <span class="specialty-col">
+              <span class="specialty">Radiology</span>
+              <span class="note">MRI, CT, ultrasound, X-ray, mammogram</span>
+            </span>
+            <span class="phone mono">(02) 6971 6100</span>
+          </a>
+          <a class="row" href="tel:0269250157" data-specialty="Hand Therapy">
+            <span class="suite mono">Suite 19</span>
+            <span class="practice">Riverina Hand Therapy</span>
+            <span class="specialty-col">
+              <span class="specialty">Hand Therapy</span>
+              <span class="note">Occupational therapy for hand, wrist &amp; arm</span>
+            </span>
+            <span class="phone mono">(02) 6925 0157</span>
+          </a>
+        </div>
+
+      </div>
+      <p class="board-footnote">This directory was compiled from public listings for 325–327 Edward Street and may not reflect every current tenant. Each practice is independently owned and operated — please call ahead to confirm suite numbers and appointment availability, or check <a href="https://www.waggaspecialistmc.com.au/" style="color:inherit;">waggaspecialistmc.com.au</a> for the centre's own specialist list.
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <section class="info-strip">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Before you arrive</span>
+          <h2>Getting around the building</h2>
+        </div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-5h6v5M9 8h.01M15 8h.01M9 12h.01M15 12h.01"/></svg>
+          <h3>Lift &amp; wheelchair access</h3>
+          <p>The building offers excellent disabled access, with a lift connecting to Level 1 and accessible parking bays close to the entrance.</p>
+        </div>
+        <div class="info-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 13l2-7h14l2 7M5 13v6M19 13v6M3 13h18M7 17h.01M17 17h.01"/></svg>
+          <h3>On-site parking</h3>
+          <p>A large on-site car park with entry off Edward Street serves the centre, including plenty of dedicated disabled parking.</p>
+        </div>
+        <div class="info-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <h3>Building hours</h3>
+          <p>The building is accessible 7:00am–6:00pm, Monday to Friday. Individual specialist rooms set their own consulting days — check when you book.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section class="find-us" id="find-us">
+    <div class="container">
+      <div class="find-grid">
+        <div class="find-details">
+          <span class="eyebrow">Find us</span>
+          <h2>Edward Street, Wagga Wagga</h2>
+          <address>
+            Wagga Wagga Specialist Medical Centre<br>
+            325–327 Edward Street<br>
+            Wagga Wagga NSW 2650
+          </address>
+          <ul class="meta-list">
+            <li><strong>General enquiries</strong> (02) 6925 0428</li>
+            <li><strong>Parking</strong> Large on-site car park, entry off Edward St</li>
+            <li><strong>Nearest to</strong> Wagga Wagga Base Hospital, short drive along Edward St</li>
+          </ul>
+        </div>
+        <div class="map-embed">
+          <iframe title="Map showing 325-327 Edward Street, Wagga Wagga" loading="lazy" src="https://www.google.com/maps?q=325+Edward+Street+Wagga+Wagga+NSW+2650&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container faq-grid">
+      <div>
+        <span class="eyebrow">Referrals &amp; visiting</span>
+        <h2>Good to know before you book</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Do I need a referral?</h3>
+          <p>Yes. Every specialist in this building requires a current referral letter from your GP or another treating doctor before your first consultation, in line with Medicare requirements.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you handle bookings for me?</h3>
+          <p>No — this building houses independent specialist practices, each with their own reception and booking system. Use the phone number listed against the specialty you need in the directory above.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there somewhere to wait between appointments?</h3>
+          <p>Each suite has its own waiting room. There's also a small shared seating area near the Ground Floor lift for those attending back-to-back appointments.</p>
+        </div>
+        <div class="faq-item">
+          <h3>I'm not sure which specialist I need — who do I ask?</h3>
+          <p>Your GP determines the referral, but if you've lost details of who you were referred to, Ground Floor reception can look up which suite your referral was sent to.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" id="contact">
+    <div class="container cta-inner">
+      <h2>Can't find the right specialty listed?</h2>
+      <div class="hero-cta">
+        <a href="tel:0269250428" class="btn btn-primary">Call · (02) 6925 0428</a>
+        <a href="#directory" class="btn btn-ghost">Back to directory</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Wagga Wagga Specialist Medical Centre, 325–327 Edward Street, Wagga Wagga NSW 2650.</span>
+    <span>Individual practices are independently owned and operated.</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Build specialty filter chips from the rows present
+  const rows = Array.from(document.querySelectorAll('.row'));
+  const specialties = Array.from(new Set(rows.map(r => r.dataset.specialty))).sort();
+  const chipRow = document.getElementById('chipRow');
+  specialties.forEach(spec => {
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.textContent = spec;
+    btn.dataset.filter = spec;
+    chipRow.appendChild(btn);
+  });
+
+  chipRow.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chip');
+    if (!chip) return;
+    chipRow.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const filter = chip.dataset.filter;
+
+    rows.forEach(row => {
+      const match = filter === 'all' || row.dataset.specialty === filter;
+      row.classList.toggle('hidden', !match);
+    });
+
+    document.querySelectorAll('.floor-group').forEach(group => {
+      const visibleRows = group.querySelectorAll('.row:not(.hidden)');
+      group.style.display = visibleRows.length ? '' : 'none';
+    });
+  });
+
+  // Staggered reveal on load, respecting reduced motion
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.floor-group').forEach((group, i) => {
+      group.classList.add('reveal');
+      group.style.animationDelay = (i * 0.08) + 's';
+    });
+  }
+</script>
+
+</body>
+</html>
