@@ -318,7 +318,7 @@
   }
   .row{
     display:grid;
-    grid-template-columns: 80px 1.3fr 1fr 150px;
+    grid-template-columns: 80px 1.3fr 1fr 170px;
     gap:18px;
     align-items:center;
     padding:16px 32px;
@@ -356,10 +356,15 @@
     font-size:12.5px;
     color:rgba(240,238,227,0.55);
   }
+  .row .phone-col{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:4px;
+  }
   .row .contact-links{
     display:flex;
-    gap:12px;
-    margin-top:2px;
+    gap:10px;
   }
   .row .contact-links .mini-link{
     font-family:'IBM Plex Mono', monospace;
@@ -385,7 +390,8 @@
     .row .suite{order:-1; font-size:12px; color:var(--brass-light);}
     .row .practice{margin-top:2px;}
     .row .specialty-col{margin-top:2px;}
-    .row .phone{text-align:left; margin-top:6px;}
+    .row .phone-col{align-items:flex-start; margin-top:6px; gap:6px;}
+    .row .phone{text-align:left;}
     .floor-label{padding:20px 20px 4px;}
   }
 
@@ -644,12 +650,14 @@
             <span class="specialty-col">
               <span class="specialty">Paediatric Sleep Medicine</span>
               <span class="note">Consultant paediatrician, sleep disorders in children</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269250305" class="phone mono">(02) 6925 0305</a>
               <span class="contact-links">
                 <a href="mailto:sss.kidssleep@gmail.com" class="mini-link">Email</a>
                 <a href="https://sydneysleepservices.com.au" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0269250305" class="phone mono">(02) 6925 0305</a>
           </div>
           <div class="row" data-specialty="Respiratory & Sleep Medicine">
             <span class="suite mono">Suite 3</span>
@@ -657,11 +665,13 @@
             <span class="specialty-col">
               <span class="specialty">Respiratory &amp; Sleep Medicine</span>
               <span class="note">Professor Tara Mackenzie, Dr Andrew Stone, Dr Teresa Louie &amp; Dr Aruvi Thiruvarudchelvan</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269321700" class="phone mono">(02) 6932 1700</a>
               <span class="contact-links">
                 <a href="mailto:admin@riverinarespiratory.com.au" class="mini-link">Email</a>
               </span>
             </span>
-            <a href="tel:0269321700" class="phone mono">(02) 6932 1700</a>
           </div>
           <a class="row" href="tel:0269257451" data-specialty="General Practice">
             <span class="suite mono">Suite 4</span>
@@ -677,12 +687,14 @@
             <span class="specialty-col">
               <span class="specialty">Hand Therapy</span>
               <span class="note">Occupational therapy for hand, wrist &amp; arm</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269250157" class="phone mono">(02) 6925 0157</a>
               <span class="contact-links">
                 <a href="mailto:admin@riverinahandtherapy.com.au" class="mini-link">Email</a>
                 <a href="https://www.riverinahandtherapy.com.au" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0269250157" class="phone mono">(02) 6925 0157</a>
           </div>
           <div class="row" data-specialty="Orthodontics & Oral Surgery">
             <span class="suite mono">Suite 6</span>
@@ -690,12 +702,14 @@
             <span class="specialty-col">
               <span class="specialty">Orthodontics &amp; Oral Surgery</span>
               <span class="note">Oral surgery &amp; orthodontic treatment</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269254466" class="phone mono">(02) 6925 4466</a>
               <span class="contact-links">
                 <a href="mailto:admin@osocentre.com" class="mini-link">Email</a>
                 <a href="https://www.osocentre.com" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0269254466" class="phone mono">(02) 6925 4466</a>
           </div>
           <a class="row" href="#" data-specialty="Pathology">
             <span class="suite mono">Suite 6a</span>
@@ -712,47 +726,55 @@
             <span class="specialty-col">
               <span class="specialty">Endocrinology</span>
               <span class="note">Diabetes, thyroid, adrenal &amp; pituitary disorders</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269252639" class="phone mono">(02) 6925 2639</a>
               <span class="contact-links">
                 <a href="mailto:reception@drmaryfreeman.com.au" class="mini-link">Email</a>
               </span>
             </span>
-            <a href="tel:0269252639" class="phone mono">(02) 6925 2639</a>
           </div>
           <div class="row" data-specialty="Chiropractic">
             <span class="suite mono">Suite 8</span>
             <span class="practice">Baseline Chiropractic</span>
             <span class="specialty-col">
               <span class="specialty">Chiropractic</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0478947283" class="phone mono">0478 947 283</a>
               <span class="contact-links">
                 <a href="mailto:info@baselinechiropractic.com" class="mini-link">Email</a>
                 <a href="https://baselinechiro.com.au/" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0478947283" class="phone mono">0478 947 283</a>
           </div>
           <div class="row" data-specialty="General Practice">
             <span class="suite mono">Suite 11</span>
             <span class="practice">Mishricky Medical</span>
             <span class="specialty-col">
               <span class="specialty">General Practice</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269717878" class="phone mono">(02) 6971 7878</a>
               <span class="contact-links">
                 <a href="mailto:reception@mishrickymedical.com" class="mini-link">Email</a>
                 <a href="https://mishrickymedical.com" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0269717878" class="phone mono">(02) 6971 7878</a>
           </div>
           <div class="row" data-specialty="Breast & Endocrine Surgery">
             <span class="suite mono">Suite 12</span>
             <span class="practice">Dr David Littlejohn</span>
             <span class="specialty-col">
               <span class="specialty">Breast &amp; Endocrine Surgeon</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269211770" class="phone mono">(02) 6921 1770</a>
               <span class="contact-links">
                 <a href="mailto:office@littlejohns.com.au" class="mini-link">Email</a>
                 <a href="https://drdavidlittlejohn.com.au" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0269211770" class="phone mono">(02) 6921 1770</a>
           </div>
           <div class="row" data-specialty="Radiology">
             <span class="suite mono">Suite 15</span>
@@ -760,24 +782,28 @@
             <span class="specialty-col">
               <span class="specialty">Radiology</span>
               <span class="note">MRI, CT, ultrasound, X-ray, mammogram</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0269716100" class="phone mono">(02) 6971 6100</a>
               <span class="contact-links">
                 <a href="mailto:wagga@imagingassociates.net.au" class="mini-link">Email</a>
                 <a href="https://imagingassociates.net.au/our-clinics/wagga-wagga" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0269716100" class="phone mono">(02) 6971 6100</a>
           </div>
           <div class="row" data-specialty="Pelvic Health Physiotherapy">
             <span class="suite mono">Suite 19</span>
             <span class="practice">Nova Pelvic Health</span>
             <span class="specialty-col">
               <span class="specialty">Pelvic Health Physiotherapy</span>
+            </span>
+            <span class="phone-col">
+              <a href="tel:0259551555" class="phone mono">(02) 5955 1555</a>
               <span class="contact-links">
                 <a href="mailto:admin@novapelvichealth.com.au" class="mini-link">Email</a>
                 <a href="https://novapelvichealth.com.au/" target="_blank" rel="noopener" class="mini-link">Website</a>
               </span>
             </span>
-            <a href="tel:0259551555" class="phone mono">(02) 5955 1555</a>
           </div>
         </div>
 
