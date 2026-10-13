@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wwsmc.com.au/sitemap.xml
